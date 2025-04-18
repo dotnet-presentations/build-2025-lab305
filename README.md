@@ -1,6 +1,4 @@
-# Mini Workshop: Building a .NET MAUI Blazor Hybrid App
-
-In this workshop, you'll build a hybrid mobile and desktop application using the .NET MAUI Blazor Hybrid template. This template combines a Blazor Web App and a .NET MAUI app, sharing UI components through a Razor Class Library (RCL). By the end of this 75-minute workshop, you'll have a functional app that displays data, navigates between pages, and uses platform-specific features.
+In this lab, you'll build a hybrid mobile and desktop application using the .NET MAUI Blazor Hybrid template. This template combines a Blazor Web App and a .NET MAUI app, sharing UI components through a Razor Class Library (RCL). By the end of this 75-minute workshop, you'll have a functional app that displays data, navigates between pages, and uses platform-specific features.
 
 ---
 
