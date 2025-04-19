@@ -1,0 +1,31 @@
+﻿@using MyHybridApp.Shared.Services
+@using MyHybridApp.Shared.Models
+@page "/details/{name}"
+@inject IMonkeyService MonkeyService
+
+<h1>@monkey?.Name</h1>
+
+@if (monkey != null)
+{
+    <div class="col-6">
+        <div class="card">
+            <img src="@monkey.Image" class="card-img-top" alt="@monkey.Name" />
+            <div class="card-body">
+                <h5 class="card-title">@monkey.Name</h5>
+                <p><strong>Location:</strong> @monkey.Location</p>
+                <p><strong>Population:</strong> @monkey.Population</p>
+                <p>@monkey.Details</p>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public string Name { get; set; } = string.Empty;
+    private Monkey? monkey;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        monkey = await Task.FromResult(MonkeyService.GetMonkeyByName(Name));
+    }
+}
