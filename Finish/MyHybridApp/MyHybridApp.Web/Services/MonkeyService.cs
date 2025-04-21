@@ -1,6 +1,5 @@
 ﻿using MyHybridApp.Shared.Models;
 using MyHybridApp.Shared.Services;
-using System.Text.Json;
 
 namespace MyHybridApp.Web.Services
 {

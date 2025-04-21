@@ -1,12 +1,7 @@
 ﻿using MyHybridApp.Shared.Models;
 using MyHybridApp.Shared.Services;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyHybridApp.Services
 {
@@ -15,7 +10,7 @@ namespace MyHybridApp.Services
         private List<Monkey> _cachedMonkeys = new List<Monkey>();
         private readonly HttpClient _httpClient = HttpClientHelper.GetHttpClient();
         private string _monkeyUri = HttpClientHelper.MonkeyUrl;
-              
+        
         public async Task<List<Monkey>> GetMonkeysAsync() 
         {
             if (_cachedMonkeys.Count > 0)
