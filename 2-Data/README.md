@@ -6,7 +6,7 @@ Create a service that fetches a list of monkeys for use in our app. The data wil
 ### Steps
 1. [] **Create the Monkey shared data model**
 
-In this step, first create the data model. Right-click on the **MyHybridApp.Shared** project and **Add** -> **New Folder** name is `Models`. Right-click on this folder and **Add** -> **Class** and name it `Monkey.cs`. Insert the following code:
+In this step, first create the data model. Right-click on the **MyHybridApp.Shared** project and **Add** -> **New Folder** name it **Models**. Right-click on this folder and **Add** -> **Class** and name it **Monkey.cs**. Insert the following code:
 ```csharp
 namespace MyHybridApp.Shared.Models;
 
@@ -24,7 +24,7 @@ public class Monkey
 
 2. [] **Create the MonkeyService Interface**
 
-In this step, you will create a new interface called `IMonkeyService` in the **MyHybridApp.Shared** project. The interface will include methods for retrieving all monkeys and fetching a specific monkey by its name. In the **Services** folder, add a new `IMonkeyService.cs` with the following code:
+In this step, you will create a new interface called `IMonkeyService` in the **MyHybridApp.Shared** project. The interface will include methods for retrieving all monkeys and fetching a specific monkey by its name. In the **Services** folder, add a new class **IMonkeyService.cs** with the following code:
 ```csharp
 using MyHybridApp.Shared.Models;
 
@@ -42,7 +42,7 @@ namespace MyHybridApp.Shared.Services
 Next, we will define the **MonkeyService** implementations. 
 The service will have a list of Monkey data that is returned to the shared UI. If we're on the web server, this will just return a list of Monkeys. If we're on the .NET MAUI client, we will make an **HttpClient** request to get the data. This service will handle returning the data and caching it in memory to avoid redundant API calls. For simplicity, the data is hard coded, but typically this would come from a database or another web service. 
 
-Add a new class `Services\MonkeyService.cs` to the **MyHybridApp.Web** project with this code:
+Add a new class **Services\MonkeyService.cs** to the **MyHybridApp.Web** project with this code:
 
 ```csharp
 using MyHybridApp.Shared.Models;
@@ -87,7 +87,7 @@ public class MonkeyService : IMonkeyService
 ```csharp
 builder.Services.AddScoped<IMonkeyService, MonkeyService>();
 ```
-Next, expose a minimal web api so remote clients can fetch the monkey data from the server. Add this code right before the last line **app.Run()** code:
+Next, expose a minimal web API so remote clients can fetch the monkey data from the server. Add this code right before the last line `app.Run()` code:
 ```csharp
 //Expose an endpoint to our MAUI client to get the monkey data
 app.MapGet("/api/monkeys", async (IMonkeyService monkeyService) =>
@@ -99,7 +99,7 @@ app.MapGet("/api/monkeys", async (IMonkeyService monkeyService) =>
 
 5. [] **Create the MonkeyService Client Implementation**
 
-In order to call the service locally, we'll need the Url that is configured for development. In the **MyHybridApp.Web** project open the **Properties\launchSettings.json** file and make note of the applicationUrl for the **https** profile:
+In order to call the service locally, we'll need the Url that is configured for development. In the **MyHybridApp.Web** project open the **Properties\launchSettings.json** file and make note of the `applicationUrl` value for the **https** profile:
 
 ```json
   "https": {
@@ -112,7 +112,7 @@ In order to call the service locally, we'll need the Url that is configured for 
    }
  },
 ```
-In this example, the Url is **https://localhost:7252**. This will be the base address we will use to call the web server from our .NET MAUI client. Add a new class **Services\MonkeyService.cs** to the **MyHybridApp** MAUI project. Add the following code, replacing the base address in `_monkeyUri` with the Url:
+In this example, the value is `https://localhost:7252`. This will be the base address we will use to call the web server from our .NET MAUI client. Add a new class **Services\MonkeyService.cs** to the **MyHybridApp** MAUI project. Add the following code, replacing the base address in `_monkeyUri` with the correct port:
 
 ```csharp
 using MyHybridApp.Shared.Models;

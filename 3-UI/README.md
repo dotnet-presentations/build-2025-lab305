@@ -6,7 +6,7 @@ Build a UI that displays a list of monkeys and add that page to the app's naviga
 ### Steps
 1. [] **Create the Monkeys Page**
 
-Create a new Razor page `Pages\Monkeys.razor` in the **MyHybridApp.Shared** project. This page will fetch and display a list of monkeys using the **IMonkeyService**. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout.
+Create a new Razor page **Pages\Monkeys.razor** in the **MyHybridApp.Shared** project. This page will fetch and display a list of monkeys using the **IMonkeyService**. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout.
 
 ```razor
 @using MyHybridApp.Shared.Services
@@ -65,13 +65,13 @@ To make the **Monkeys** page accessible, add a navigation link to the **Layout\N
 
 3. [] **Run the Solution**
 
-Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the Monkeys page by selecing the link in the menu. Make sure both the Windows app and the Web app work as expected. 
+Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the **Monkeys** page by selecing the link in the menu. Make sure both the Windows app and the Web app work as expected. 
 
 ![](./../images/MonkeyPage.jpg)
 
 4. [] **Create the Details Page**
 
-Add a new Razor component named `DetailsPage.razor` in the **MyHybridApp.Shared** project. This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
+Add a new Razor component named **DetailsPage.razor** in the **MyHybridApp.Shared** project. This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
 
 ```razor
 @using MyHybridApp.Shared.Services
@@ -83,7 +83,7 @@ Add a new Razor component named `DetailsPage.razor` in the **MyHybridApp.Shared*
 
 @if (monkey != null)
 {
-    <div class="col-6">
+    <div class="col-lg-6">
         <div class="card">
             <img src="@monkey.Image" class="card-img-top" alt="@monkey.Name" />
             <div class="card-body">

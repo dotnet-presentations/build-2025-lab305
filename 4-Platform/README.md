@@ -6,9 +6,9 @@ Detect internet access and display a dialog if offline. Implement a custom **ICo
 ### Steps
 1. [] **Create the Connectivity Service**
 
-Add `IConnectivityService` and its implementations in both **MyHybridApp** and **MyHybridApp.Web**.
+Add the `IConnectivityService` and its implementations in both **MyHybridApp** and **MyHybridApp.Web**.
 
-Create the shared interface in **MyHybridApp.Shared** project `\Services\IConnectivityService.cs`:
+Create the shared interface in the **MyHybridApp.Shared** project **\Services\IConnectivityService.cs**:
 ```csharp
 namespace MyHybridApp.Shared.Services;
 
@@ -18,7 +18,7 @@ public interface IConnectivityService
 }
 ```
 
-Create the .NET MAUI implementation in **MyHybridApp** project `\Services\ConnectivityService.cs`:
+Create the .NET MAUI implementation in the **MyHybridApp** project **\Services\ConnectivityService.cs**:
 ```csharp
 using MyHybridApp.Shared.Services;
 
@@ -33,7 +33,7 @@ public class ConnectivityService : IConnectivityService
 }
 ```
 
-Create the Blazor web implementation in **MyHybridApp.Web** project `\Services\ConnectivityService.cs`:
+Create the Blazor web implementation in **MyHybridApp.Web** project **\Services\ConnectivityService.cs**:
 ```csharp
 using MyHybridApp.Shared.Services;
 
@@ -58,7 +58,7 @@ builder.Services.AddSingleton<IConnectivityService, ConnectivityService>();
 
 3. [] **Create the Shared Razor Component**
 
-Next add a folder to the Razor Class Library **MyHybridApp.Shared** called `Components` and add a new Razor component called `OfflineAlert.razor`. Add the following code:
+Next add a folder to the Razor Class Library **MyHybridApp.Shared** called **Components** and add a new Razor component called **OfflineAlert.razor**. Add the following code:
 
 ```razor
 @using MyHybridApp.Shared.Services  
@@ -85,7 +85,7 @@ Now modify the **Pages\Monkeys.razor** to use this component. First inject the `
 @inject NavigationManager NavigationManager
 ```
 
-At the top of the file, under the **@using MyHybridApp.Shared.Models** line add:
+At the top of the file, under the `@using MyHybridApp.Shared.Models` line add:
 
 ```razor
 @using MyHybridApp.Shared.Components
@@ -108,23 +108,25 @@ Finally, add the code for the `RefreshHandler` under the `OnInitializedAsync()` 
 
 4. [] **Run the Solution and Disable the Cache**
 
-Build and Debug `F5` the solution. On the **Windows** app select the Monkey page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
+Build and Debug `F5` the solution. On the **Windows** app select the **Monkeys** page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
 
 Open the Network tab and select **Disable cache** so that the pictures of the monkeys won't be loaded from disk but be requested from the internet every time. 
 
 ![](./../images/WebDevTools.jpg)
 
->**Tip:** If the WebView has focus, you can use the `F12` Web Developer tools to debug the rendered web app (html, css, javascript) inside the WebView.
+>**Tip:** If the WebView has focus and you are running in `DEBUG` mode, you can use the `F12` Web Developer tools to debug the rendered web app (html, css, javascript) inside the WebView. For more information see [the documentation](https://learn.microsoft.com/aspnet/core/blazor/hybrid/developer-tools?view=aspnetcore-9.0&viewFallbackFrom=net-maui-9.0&pivots=android&toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json).
 
 5. [] **Go offline and Test the ConnectivityService**
 
-To simulate going offline on Windows, open the Device Manager and select Network Adapters. Right-click and **Disable device** the Ethernet Adapter. 
+To simulate going offline on Windows, open the **Device Manager** and select **Network Adapters**. Right-click and **Disable device** the Ethernet Adapter. 
+
+![](./../images/DeviceManager.jpg)
 
 On the Windows app, navigate back to the Mokey page and you will see the **OfflineAlert.razor** component displayed. 
 
 ![](./../images/OfflineAlert.jpg)
 
-In the Device Manager, right-click and **Enable device** on the Enternet Adapter. On the Windows app, click the **Refresh** button and the page will reload. 
+In the **Device Manager**, right-click and **Enable device** on the Enternet Adapter. On the Windows app, click the **Refresh** button and the page will reload. 
 
 ### Check-in
 
