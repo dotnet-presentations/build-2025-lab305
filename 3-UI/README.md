@@ -6,7 +6,7 @@ Build a UI that displays a list of monkeys and add that page to the app's naviga
 ### Steps
 1. [] **Create the Monkeys Page**
 
-Create a new Razor page `Pages\Monkeys.razor` in the `MyHybridApp.Shared` project. This page will fetch and display a list of monkeys using the `IMonkeyService`. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout.
+Create a new Razor page `Pages\Monkeys.razor` in the **MyHybridApp.Shared** project. This page will fetch and display a list of monkeys using the **IMonkeyService**. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout.
 
 ```razor
 @using MyHybridApp.Shared.Services
@@ -54,7 +54,7 @@ else
 
 2. [] **Add the Monkeys Page to the Navigation Menu**
 
-To make the `Monkeys` page accessible, add a navigation link to the `Layout\NavMenu.razor` file in the `MyHybridApp.Shared` project. This link will allow users to navigate to the `/monkeys` route.
+To make the **Monkeys** page accessible, add a navigation link to the **Layout\NavMenu.razor** file in the **MyHybridApp.Shared** project. This link will allow users to navigate to the **/monkeys** route.
 
 ```razor
 <div class="nav-item px-3">
@@ -72,7 +72,7 @@ Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigat
 
 4. [] **Create the Details Page**
 
-Add a new Razor component named `DetailsPage.razor` in the `MyHybridApp.Shared` project. This page will display detailed information about a selected monkey. The route for this page will include a `name` parameter to identify the selected monkey.
+Add a new Razor component named `DetailsPage.razor` in the **MyHybridApp.Shared** project. This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
 
 ```razor
 @using MyHybridApp.Shared.Services
@@ -110,7 +110,7 @@ Add a new Razor component named `DetailsPage.razor` in the `MyHybridApp.Shared` 
 
 5. [] **Update the Monkeys Page for Navigation**
 
-Modify the `Monkeys.razor` file to add a clickable link to each monkey card under the `<div class="card-body">` section. This link will navigate to the details page for the selected monkey.
+Modify the **Monkeys.razor** file to add a clickable link to each monkey card under the `<div class="card-body">` section. This link will navigate to the details page for the selected monkey.
 
 ```razor
 <a href="/details/@monkey.Name" class="stretched-link"></a>
