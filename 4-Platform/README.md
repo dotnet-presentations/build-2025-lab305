@@ -108,11 +108,11 @@ Finally, add the code for the `RefreshHandler` under the `OnInitializedAsync()` 
 
 4. [] **Run the Solution and Disable the Cache**
 
-Build and Debug `F5` the solution. On the Windows app select the Monkey page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
+Build and Debug `F5` the solution. On the **Windows** app select the Monkey page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
 
 Open the Network tab and select **Disable cache** so that the pictures of the monkeys won't be loaded from disk but be requested from the internet every time. 
 
-![](/images/WebDevTools.jpg)
+![](./../images/WebDevTools.jpg)
 
 >**Tip:** If the WebView has focus, you can use the `F12` Web Developer tools to debug the rendered web app (html, css, javascript) inside the WebView.
 
@@ -122,7 +122,7 @@ To simulate going offline on Windows, open the Device Manager and select Network
 
 On the Windows app, navigate back to the Mokey page and you will see the **OfflineAlert.razor** component displayed. 
 
-![](/images/OfflineAlert.jpg)
+![](./../images/OfflineAlert.jpg)
 
 In the Device Manager, right-click and **Enable device** on the Enternet Adapter. On the Windows app, click the **Refresh** button and the page will reload. 
 

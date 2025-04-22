@@ -67,7 +67,7 @@ To make the **Monkeys** page accessible, add a navigation link to the **Layout\N
 
 Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the Monkeys page by selecing the link in the menu. Make sure both the Windows app and the Web app work as expected. 
 
-![](/images/MonkeyPage.jpg)
+![](./../images/MonkeyPage.jpg)
 
 4. [] **Create the Details Page**
 
@@ -119,7 +119,7 @@ Modify the **Monkeys.razor** file to add a clickable link to each monkey card un
 
 Make sure the monkey detail data is loading. Build and Debug `F5` the solution. Select a monkey to pull up the details page. Make sure both the Windows app and the Web app work as expected. 
 
-![](/images/MonkeyDetails.jpg)
+![](./../images/MonkeyDetails.jpg)
 
 ### Check-in
 
