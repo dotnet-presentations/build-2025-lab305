@@ -20,16 +20,16 @@ Blazor is a web framework that allows developers to build interactive web applic
 Blazor Hybrid allows you to embed Blazor components into native apps using .NET MAUI. This approach combines the strengths of web and native development, enabling code reuse across web and native platforms and access to native device features. Blazor Hybrid apps leverage the `BlazorWebView` control, which renders Razor components inside a native WebView, while running .NET code directly on the device.
 
 ### Create the project
-1. **Open Visual Studio**:  
+1. [] **Open Visual Studio**:  
    Launch **Visual Studio** and select **Create a new project** from the start screen. This is the starting point for creating a new solution.
 
-2. **Choose the Template**:  
+2. [] **Choose the Template**:  
    Select the **.NET MAUI Blazor Hybrid and Web App** template. This template is specifically designed to create a solution with multiple projects: a shared Razor Class Library (RCL), a Blazor Web App, and a .NET MAUI Blazor Hybrid App. These projects allow you to share UI components and logic across platforms.
 
-3. **Name the Project**:  
+3. [] **Name the Project**:  
    Enter `MyHybridApp` as the project name and click **Next**. 
 
-4. **Configure the Project**:  
+4. [] **Configure the Project**:  
    - Set the **Framework** to `.NET 9.0`. This ensures the project uses the latest version of .NET, providing access to the newest features and improvements.
    - Check **Configure for HTTPS** to enable secure communication between the app and any external services.
    - Set the **Interactive Render Mode** to `Server`. This mode allows the Blazor Web App to use interactive server-side rendering.
@@ -46,12 +46,12 @@ Blazor Hybrid allows you to embed Blazor components into native apps using .NET 
 
 
 ### Run the app
-1. Make sure the project has restored all the NuGet packages. From the Build menu, select **Build Solution** `Ctrl+Shift+B` to build all of the projects for all of the platforms. 
-2. To make it easier to run the entire solution when debugging, drop down the Debug target menu and select **Configure Startup Projects...**
+1. [] Make sure the project has restored all the NuGet packages. From the Build menu, select **Build Solution** `Ctrl+Shift+B` to build all of the projects for all of the platforms. 
+2. [] To make it easier to run the entire solution when debugging, drop down the Debug target menu and select **Configure Startup Projects...**
 
 ![](../images/Configure.jpg)
 
-3. Select **Multiple Startup Projects** and configure the launch profile to **Start** the `MyHbridApp` with the **Debug Target** set to _Windows Machine_ and set the `MyHybridApp.Web` to **Start without debugging** with the **Debug Target** set to _https_. 
+3. [] Select **Multiple Startup Projects** and configure the launch profile to **Start** the `MyHbridApp` with the **Debug Target** set to _Windows Machine_ and set the `MyHybridApp.Web` to **Start without debugging** with the **Debug Target** set to _https_. 
 
 4. Name the Launch profile `Windows+Web` then Click **OK**.
 
@@ -60,7 +60,7 @@ Blazor Hybrid allows you to embed Blazor components into native apps using .NET 
 5. Make sure the launch profile is selected and then click **Start** `F5` to start debugging. A web browser and a Windows app will launch. Notice that the functionality of the apps are exactly the same. They both share all of their UI with the shared Razor Class Library `MyHybridApp.Shared`. The only difference is the Home page displays a different message depending on what device you are on. 
 
 ### Tour of the code
-1. **`MyHybridApp` .NET MAUI client**
+1. [] **`MyHybridApp` .NET MAUI client**
     - Explore the project structure in the Solution Explorer. This project is a blend of Blazor and .NET MAUI source code. 
         - `wwwroot` is where the static web assets are located like application-wide CSS and `index.html` file that is used as the root of the BlazorWebView.
         - `Platforms` folder is where any device-specific code that you may need to configure belongs.
@@ -98,7 +98,7 @@ Blazor Hybrid allows you to embed Blazor components into native apps using .NET 
         }
     }
     ```    
-2. **`MyHybridApp.Shared` Razor Class Library**
+2. [] **`MyHybridApp.Shared` Razor Class Library**
     - Expand the `MyHybridApp.Shared` project struction in Solution Explorer. Notice the `Pages` and `Layout` that are shared by the .NET MAUI and Blazor Web apps. 
     - Open the `Services` folder and you will see the definition of the `IFormFactor` interface here. 
     - Open the `Home.razor` page and notice the code at the top of the file that injects the interface so that the implementations can be used on the page. 
@@ -107,7 +107,7 @@ Blazor Hybrid allows you to embed Blazor components into native apps using .NET 
     @using MyHybridApp.Shared.Services
     @inject IFormFactor FormFactor
     ```
-3. **`MyHybridApp.Web` Blazor Web App**
+3. [] **`MyHybridApp.Web` Blazor Web App**
     - Open up the `Services\Formfactor.cs` and notice the implemntation here is specific for the server app, returning "Web" for the form factor. 
     ```csharp
         public class FormFactor : IFormFactor

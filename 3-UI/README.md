@@ -4,7 +4,7 @@
 Build a UI that displays a list of monkeys and add that page to the app's navigation menu. When a monkey is selected in the list, display the mokey details. 
 
 ### Steps
-1. **Create the Monkeys Page**
+1. [] **Create the Monkeys Page**
 
 Create a new Razor page `Pages\Monkeys.razor` in the `MyHybridApp.Shared` project. This page will fetch and display a list of monkeys using the `IMonkeyService`. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout.
 
@@ -52,7 +52,7 @@ else
 }
 ```
 
-4. **Add the Monkeys Page to the Navigation Menu**
+2. [] **Add the Monkeys Page to the Navigation Menu**
 
 To make the `Monkeys` page accessible, add a navigation link to the `Layout\NavMenu.razor` file in the `MyHybridApp.Shared` project. This link will allow users to navigate to the `/monkeys` route.
 
@@ -64,13 +64,13 @@ To make the `Monkeys` page accessible, add a navigation link to the `Layout\NavM
 </div>
 ```
 
-5. **Run the Solution**
+3. [] **Run the Solution**
 
 Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the Monkeys page by selecing the link in the menu. Make sure both the Windows app and the Web app work as expected. 
 
 ![](/images/MonkeyPage.jpg)
 
-6. **Create the Details Page**
+4. [] **Create the Details Page**
 
 Add a new Razor component named `DetailsPage.razor` in the `MyHybridApp.Shared` project. This page will display detailed information about a selected monkey. The route for this page will include a `name` parameter to identify the selected monkey.
 
@@ -108,7 +108,7 @@ Add a new Razor component named `DetailsPage.razor` in the `MyHybridApp.Shared` 
 }
 ```
 
-7. **Update the Monkeys Page for Navigation**
+5. [] **Update the Monkeys Page for Navigation**
 
 Modify the `Monkeys.razor` file to add a clickable link to each monkey card under the `<div class="card-body">` section. This link will navigate to the details page for the selected monkey.
 
@@ -116,7 +116,7 @@ Modify the `Monkeys.razor` file to add a clickable link to each monkey card unde
 <a href="/details/@monkey.Name" class="stretched-link"></a>
 ```
 
-8. **Run the Solution**
+6. [] **Run the Solution**
 
 Make sure the monkey detail data is loading. Build and Debug `F5` the solution. Select a monkey to pull up the details page. Make sure both the Windows app and the Web app work as expected. 
 

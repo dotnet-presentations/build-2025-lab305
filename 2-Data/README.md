@@ -4,7 +4,7 @@
 Create a service that fetches a list of monkeys for use in our app. The data will reside on the Blazor server app and we'll expose a web API to the .NET MAUI client. 
 
 ### Steps
-1. **Create the Monkey shared data model**
+1. [] **Create the Monkey shared data model**
 
 In this step, first create the data model. Right-click on the `MyHybridApp.Shared` project and **Add** -> **New Folder** name is `Models`. Right-click on this folder and **Add** -> **Class** and name it `Monkey.cs`. Insert the following code:
 ```csharp
@@ -23,7 +23,7 @@ namespace MyHybridApp.Shared.Models
 }
 ```
 
-2. **Create the MonkeyService Interface**
+2. [] **Create the MonkeyService Interface**
 
 In this step, you will create a new interface called `IMonkeyService` in the `MyHybridApp.Shared` project. The interface will include methods for retrieving all monkeys and fetching a specific monkey by its name. In the `Services` folder, add a new `IMonkeyService.cs` with the following code:
 ```csharp
@@ -38,7 +38,7 @@ namespace MyHybridApp.Shared.Services
     }
 }
 ```
-3. **Create the MonkeyService Server Implementation**
+3. [] **Create the MonkeyService Server Implementation**
 
 Next, we will define the `MonkeyService` implementations. 
 The service will have a list of Monkey data that is returned to the shared UI. If we're on the web server, this will just return a list of Monkeys. If we're on the .NET MAUI client, we will make an `HttpClient` request to get the data. This service will handle returning the data and caching it in memory to avoid redundant API calls. For simplicity, the data is hard coded, but typically this would come from a database or another web service. 
@@ -82,7 +82,7 @@ namespace MyHybridApp.Web.Services
     }
 }
 ```
-4. **Register the Service and Expose the Endpoint**
+4. [] **Register the Service and Expose the Endpoint**
 
  To make the `MonkeyService` available throughout the app, you need to register it in the dependency injection container in the `Program.cs`. Add this service as a scoped service. Scoped services are created once per request. They are useful for services that need to maintain data consistency during an operation and are tied to a specific request. Add this code under the registration of the `FormFactor` service:
 
@@ -99,7 +99,7 @@ app.MapGet("/api/monkeys", async (IMonkeyService monkeyService) =>
 });
 ```
 
-5. **Create the MonkeyService Client Implementation**
+5. [] **Create the MonkeyService Client Implementation**
 
 In order to call the service locally, we'll need the Url that is configured for development. In the `MyHybridApp.Web` project open the `Properties\launchSettings.json` file and make note of the applicationUrl for the `https` profile:
 

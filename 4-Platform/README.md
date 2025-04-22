@@ -4,7 +4,7 @@
 Detect internet access and display a dialog if offline. Implement a custom `IConnectivityService` for both .NET MAUI and Blazor Web app. Create a shared razor component that uses this service to display a message to the user and add it to the `Monkey.razor` page.
 
 ### Steps
-1. **Create the Connectivity Service**
+1. [] **Create the Connectivity Service**
 
 Add `IConnectivityService` and its implementations in both `MyHybridApp` and `MyHybridApp.Web`.
 
@@ -51,7 +51,7 @@ namespace MyHybridApp.Web.Services
 }
 ```
 
-2. **Register Services**:  
+2. [] **Register Services**:  
 
 Register `IConnectivityService` in both `MyHybridApp.Web` project's `Program.cs` and `MyHybridApp` project's `MauiProgram.cs`.
 
@@ -59,7 +59,7 @@ Register `IConnectivityService` in both `MyHybridApp.Web` project's `Program.cs`
 builder.Services.AddSingleton<IConnectivityService, ConnectivityService>();
 ```
 
-3. **Create the Shared Razor Component**
+3. [] **Create the Shared Razor Component**
 
 Next add a folder to the Razor Class Library `MyHybridApp.Shared` called `Components` and add a new Razor component called `OfflineAlert.razor`. Add the following code:
 
@@ -103,7 +103,7 @@ Finally, add the code for the `RefreshHandler` under the `OnInitializedAsync()` 
  }
 ```
 
-8. **Run the Solution and Disable the Cache**
+4. [] **Run the Solution and Disable the Cache**
 
 Build and Debug `F5` the solution. On the Windows app select the Monkey page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
 
@@ -113,7 +113,7 @@ Open the Network tab and select **Disable cache** so that the pictures of the mo
 
 >**Tip:** If the WebView has focus, you can use the `F12` Web Developer tools to debug the rendered web app (html, css, javascript) inside the WebView.
 
-8. **Go offline and Test the ConnectivityService**
+5. [] **Go offline and Test the ConnectivityService**
 
 To simulate going offline on Windows, open the Device Manager and select Network Adapters. Right-click and **Disable device** the Ethernet Adapter. 
 
