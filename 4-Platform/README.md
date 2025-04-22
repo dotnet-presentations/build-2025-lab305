@@ -85,6 +85,12 @@ Now modify the **Pages\Monkeys.razor** to use this component. First inject the `
 @inject NavigationManager NavigationManager
 ```
 
+At the top of the file, under the **@using MyHybridApp.Shared.Models** line add:
+
+```razor
+@using MyHybridApp.Shared.Models.Components
+```
+
 Then add the component after the `<h1>`:
 ```razor
 <OfflineAlert RefreshCallback="RefreshHandler" />
