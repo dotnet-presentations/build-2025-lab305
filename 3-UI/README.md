@@ -11,7 +11,6 @@ Create a new Razor page `Pages\Monkeys.razor` in the **MyHybridApp.Shared** proj
 ```razor
 @using MyHybridApp.Shared.Services
 @using MyHybridApp.Shared.Models
-@using MyHybridApp.Shared.Components
 @page "/monkeys"
 @inject IMonkeyService MonkeyService
 
