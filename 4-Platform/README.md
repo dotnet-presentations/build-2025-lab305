@@ -8,7 +8,7 @@ Detect internet access and display a dialog if offline. Implement a custom **ICo
 
 Add `IConnectivityService` and its implementations in both **MyHybridApp** and **MyHybridApp.Web**.
 
-Create the shared interface in **MauiHybridApp.Shared** project `\Services\IConnectivityService.cs`:
+Create the shared interface in **MyHybridApp.Shared** project `\Services\IConnectivityService.cs`:
 ```csharp
 namespace MyHybridApp.Shared.Services;
 
@@ -18,7 +18,7 @@ public interface IConnectivityService
 }
 ```
 
-Create the .NET MAUI implementation in **MauiHybridApp** project `\Services\ConnectivityService.cs`:
+Create the .NET MAUI implementation in **MyHybridApp** project `\Services\ConnectivityService.cs`:
 ```csharp
 using MyHybridApp.Shared.Services;
 
@@ -33,7 +33,7 @@ public class ConnectivityService : IConnectivityService
 }
 ```
 
-Create the Blazor web implementation in **MauiHybridApp.Web** project `\Services\ConnectivityService.cs`:
+Create the Blazor web implementation in **MyHybridApp.Web** project `\Services\ConnectivityService.cs`:
 ```csharp
 using MyHybridApp.Shared.Services;
 
