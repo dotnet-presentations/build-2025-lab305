@@ -9,7 +9,7 @@ namespace MyHybridApp.Services
     {
         private List<Monkey> _cachedMonkeys = new List<Monkey>();
         private readonly HttpClient _httpClient = HttpClientHelper.GetHttpClient();
-        private string _monkeyUri = HttpClientHelper.MonkeyUrl;
+        private readonly string _monkeyUri = HttpClientHelper.MonkeyUrl;
         
         public async Task<List<Monkey>> GetMonkeysAsync() 
         {

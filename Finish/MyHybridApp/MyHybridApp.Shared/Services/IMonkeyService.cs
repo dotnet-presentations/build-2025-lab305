@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyHybridApp.Shared.Models;
+﻿using MyHybridApp.Shared.Models;
 
 namespace MyHybridApp.Shared.Services
 {
