@@ -154,4 +154,4 @@ public class FormFactor : IFormFactor
 builder.Services.AddSingleton<IFormFactor, FormFactor>();
 ```
 ### Check-in
-At the end of this section, you should have an app with the basic template code properly restored and running as provided in the [1-Overview](../1-Overview/) folder.
+At the end of this section, you should have an app with the basic template code properly restored and running as provided in the [1-Overview](./../1-Overview/) folder.
