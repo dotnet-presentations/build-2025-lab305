@@ -1,0 +1,16 @@
+﻿@using MyHybridApp.Shared.Services
+@inject IConnectivityService ConnectivityService
+
+<div class="alert alert-danger" style="display: @(ConnectivityService.IsConnected() ? "none" : "block")">
+    <p>No internet connection. Please check your connection and try again.</p>
+    <button class="btn btn-primary" @onclick="Refresh">Refresh</button>
+</div>
+
+@code {
+    [Parameter] public EventCallback<string> RefreshCallback { get; set; }
+
+    void Refresh()
+    {
+        RefreshCallback.InvokeAsync(string.Empty);
+    }
+}
