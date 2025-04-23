@@ -14,7 +14,7 @@ Follow these sections in sequence to build the solution for this lab.
 
 At the end of this lab, you will build an app that looks like this across Android, iOS, macOS, Windows and web platforms.
 
-![](/images/AllApps.jpg)
+![](./images/AllApps.jpg)
 
 ## More resources
 - [Learn: What is .NET MAUI?](https://learn.microsoft.com/dotnet/maui/what-is-maui?view=net-maui-9.0)
