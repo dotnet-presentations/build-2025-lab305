@@ -6,7 +6,7 @@ Create a service that fetches a list of monkeys for use in our app. The data wil
 ### Steps
 1. [] **Create the Monkey shared data model**
 
-In this step, first create the data model. Right-click on the **MyHybridApp.Shared** project and **Add** -> **New Folder** name it **Models**. Right-click on this folder and **Add** -> **Class** and name it **Monkey.cs**. Insert the following code:
+In this step, first create the data model. Right-click on the **MyHybridApp.Shared** project and **Add** -> **New Folder**, name it **Models**. Right-click on this folder and **Add** -> **Class**, and name it **Monkey.cs**. Insert the following code:
 ```csharp
 namespace MyHybridApp.Shared.Models;
 
@@ -28,13 +28,12 @@ In this step, you will create a new interface called `IMonkeyService` in the **M
 ```csharp
 using MyHybridApp.Shared.Models;
 
-namespace MyHybridApp.Shared.Services
+namespace MyHybridApp.Shared.Services;
+
+public interface IMonkeyService
 {
-    public interface IMonkeyService
-    {
-        Task<List<Monkey>> GetMonkeysAsync();
-        Monkey? GetMonkeyByName(string name);
-    }
+    Task<List<Monkey>> GetMonkeysAsync();
+    Monkey? GetMonkeyByName(string name);
 }
 ```
 3. [] **Create the MonkeyService Server Implementation**
