@@ -1,4 +1,5 @@
 ## More resources
+Explore these resource to continue your learning.
 
 - [Learn: What is .NET MAUI?](https://learn.microsoft.com/dotnet/maui/what-is-maui?view=net-maui-9.0)
 - [Learn: Overview of hybrid apps](https://learn.microsoft.com/dotnet/maui/hybrid-apps/?view=net-maui-9.0)

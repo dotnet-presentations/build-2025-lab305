@@ -125,4 +125,4 @@ Make sure the monkey detail data is loading. Build and Debug `F5` the solution. 
 
 ### Check-in
 
-At the end of this section, you should have an app with all the functionality working and running as provided in the [3-UI](../3-UI/) folder.
+At the end of this section, you should have an app with all the functionality working and running as provided in the [3-UI](https://github.com/dotnet-presentations/build-2025-lab305/tree/main/3-UI/) folder.

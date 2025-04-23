@@ -165,4 +165,4 @@ builder.Services.AddScoped<IMonkeyService, MonkeyService>();
 
 ### Check-in
 
-Rebuild the solution and make sure there are no errors. At the end of this section, your code should match the solution provided in the [2-Data](../2-Data/) folder.
+Rebuild the solution and make sure there are no errors. At the end of this section, your code should match the solution provided in the [2-Data](https://github.com/dotnet-presentations/build-2025-lab305/tree/main/2-Data/) folder.
