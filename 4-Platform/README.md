@@ -19,10 +19,11 @@ public interface IConnectivityService
 ```
 
 Create the .NET MAUI implementation in the **MyHybridApp** project **\Services\ConnectivityService.cs**:
+
 ```csharp
 using MyHybridApp.Shared.Services;
 
-namespace MyHybridApp.Services
+namespace MyHybridApp.Services;
 
 public class ConnectivityService : IConnectivityService
 {
@@ -32,7 +33,6 @@ public class ConnectivityService : IConnectivityService
     }
 }
 ```
-
 Create the Blazor web implementation in **MyHybridApp.Web** project **\Services\ConnectivityService.cs**:
 ```csharp
 using MyHybridApp.Shared.Services;
