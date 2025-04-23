@@ -57,13 +57,13 @@ This will generate a solution with the following structure:
 
 ![](../images/Configure.jpg)
 
-3. [] Select **Multiple Startup Projects** and configure the launch profile to **Start** the **MyHbridApp** with the **Debug Target** set to _Windows Machine_ and set the **MyHybridApp.Web** to **Start without debugging** with the **Debug Target** set to _https_. 
+3. [] Select **Multiple Startup Projects** and configure the launch profile to **Start** the **MyHybridApp** with the **Debug Target** set to _Windows Machine_ and set the **MyHybridApp.Web** to **Start without debugging** with the **Debug Target** set to _https_. 
 
 4. [] Name the Launch profile **Windows+Web** then Click **OK**.
 
 ![](../images/Startup.jpg)
 
-5. [] Make sure the launch profile is selected and then click **Start** `F5` to start debugging. A web browser and a Windows app will launch. Notice that the functionality of the apps are exactly the same. They both share all of their UI with the shared Razor Class Library **MyHybridApp.Shared**. The only difference is the Home page displays a different message depending on what device you are on. 
+5. [] Make sure the launch profile is selected and then click **Start** `F5` to start debugging. A web browser and a Windows app will launch. Notice that the functionality of the apps is exactly the same. They both share all of their UI with the shared Razor Class Library **MyHybridApp.Shared**. The only difference is the Home page displays a different message depending on what device you are on. 
 
 ### Tour of the code
 1. [] **MyHybridApp .NET MAUI client**
@@ -76,7 +76,7 @@ This will generate a solution with the following structure:
     - **Platforms** folder is where any device-specific code that you may need to configure belongs.
     - **Resources** are where all the .NET MAUI static assets that end up on the devices belong like splash screens and images or any other raw files you need to put on the device. 
 
-- Open up this project's **.csproj** file by double-clicking on the project name in the Solution Explorer. Notice that the project is multi-targeted for Android, iOS, MacCatalyst and Windows (Windows will only build if you are on Windows):
+- Open up this project's **.csproj** file by double-clicking on the project name in the Solution Explorer. Notice that the project is multi-targeted for Android, iOS, MacCatalyst, and Windows (Windows will only build if you are on Windows):
 
 ```xml
 <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
@@ -93,7 +93,7 @@ This will generate a solution with the following structure:
 </BlazorWebView>
 ```
 
- - Open up the **MauiProgram.cs**, the starting point that configures the builder that creates the **MauiApp**. This is where your app services are created. Services used by the shared UI may need to be specific implementations depending on where it's running. In that case we can use the interface injection pattern. This template provides an example called **FormFactor** that returns information about the device the app is running on. 
+ - Open up the **MauiProgram.cs**, the starting point that configures the builder that creates the **MauiApp**. This is where your app services are created. Services used by the shared UI may need to be specific implementations depending on where it's running. In that case, we can use the interface injection pattern. This template provides an example called **FormFactor** that returns information about the device the app is running on. 
 
 ```csharp
 builder.Services.AddSingleton<IFormFactor, FormFactor>();
@@ -116,7 +116,7 @@ public class FormFactor : IFormFactor
 ```    
 
 2. [] **MyHybridApp.Shared Razor Class Library**
-- Expand the **MyHybridApp.Shared** project struction in Solution Explorer. Notice the **Pages** and **Layout** that are shared by the .NET MAUI and Blazor Web apps. 
+- Expand the **MyHybridApp.Shared** project structure in Solution Explorer. Notice the **Pages** and **Layout** that are shared by the .NET MAUI and Blazor Web apps. 
 
 ![](./../images/MyHybridApp-Shared.jpg)
 
@@ -134,7 +134,7 @@ public class FormFactor : IFormFactor
 
 ![](./../images/MyHybridApp-Web.jpg)
 
-- Open up the **Services\Formfactor.cs** and notice the implemntation here is specific for the server app, returning "Web" for the form factor. 
+- Open up the **Services\FormFactor.cs** and notice the implementation here is specific for the server app, returning "Web" for the form factor. 
 ```csharp
     public class FormFactor : IFormFactor
     {

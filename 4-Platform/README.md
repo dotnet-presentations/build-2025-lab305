@@ -1,7 +1,7 @@
 ## 4. Using Platform Features
 
 ### Goal
-Detect internet access and display a dialog if offline. Implement a custom **IConnectivityService** for both .NET MAUI and Blazor Web app. Create a shared razor component that uses this service to display a message to the user and add it to the **Monkey.razor** page.
+Detect internet access and display a dialog if offline. Implement a custom **IConnectivityService** for both .NET MAUI and Blazor Web app. Create a shared Razor component that uses this service to display a message to the user and add it to the **Monkeys.razor** page.
 
 ### Steps
 1. [] **Create the Connectivity Service**
@@ -22,7 +22,7 @@ Create the .NET MAUI implementation in the **MyHybridApp** project **\Services\C
 ```csharp
 using MyHybridApp.Shared.Services;
 
-namespace MyHybridApp.Services
+namespace MyHybridApp.Services;
 
 public class ConnectivityService : IConnectivityService
 {
@@ -79,7 +79,7 @@ Next add a folder to the Razor Class Library **MyHybridApp.Shared** called **Com
 }
 ```
 
-Now modify the **Pages\Monkeys.razor** to use this component. First inject the `NavigationManager`. We will use this to reload the page after the user clicks **Refresh** on the component. At the top of ths file, under the `@inject IMonkeyService MonkeyService` line, add:
+Now modify the **Pages\Monkeys.razor** to use this component. First, inject the `NavigationManager`. We will use this to reload the page after the user clicks **Refresh** on the component. At the top of this file, under the `@inject IMonkeyService MonkeyService` line, add:
 
 ```razor
 @inject NavigationManager NavigationManager
@@ -99,22 +99,22 @@ Then add the component after the `<h1>`:
 Finally, add the code for the `RefreshHandler` under the `OnInitializedAsync()` method:
 
 ```csharp
- async Task RefreshHandler()
- {
-     monkeys = await MonkeyService.GetMonkeysAsync(); //try to get the monkeys again
-     NavigationManager.NavigateTo("/monkeys", true); //reload the page
- }
+async Task RefreshHandler()
+{
+    monkeys = await MonkeyService.GetMonkeysAsync(); // Try to get the monkeys again
+    NavigationManager.NavigateTo("/monkeys", true); // Reload the page
+}
 ```
 
 4. [] **Run the Solution and Disable the Cache**
 
-Build and Debug `F5` the solution. On the **Windows** app select the **Monkeys** page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
+Build and Debug `F5` the solution. On the **Windows** app, select the **Monkeys** page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
 
 Open the Network tab and select **Disable cache** so that the pictures of the monkeys won't be loaded from disk but be requested from the internet every time. 
 
 ![](./../images/WebDevTools.jpg)
 
->**Tip:** If the WebView has focus and you are running in `DEBUG` mode, you can use the `F12` Web Developer tools to debug the rendered web app (html, css, javascript) inside the WebView. For more information see [the documentation](https://learn.microsoft.com/aspnet/core/blazor/hybrid/developer-tools?view=aspnetcore-9.0&viewFallbackFrom=net-maui-9.0&pivots=android&toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json).
+>**Tip:** If the WebView has focus and you are running in `DEBUG` mode, you can use the `F12` Web Developer tools to debug the rendered web app (HTML, CSS, JavaScript) inside the WebView. For more information, see [the documentation](https://learn.microsoft.com/aspnet/core/blazor/hybrid/developer-tools?view=aspnetcore-9.0&viewFallbackFrom=net-maui-9.0&pivots=android&toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json).
 
 5. [] **Go offline and Test the ConnectivityService**
 
@@ -122,11 +122,11 @@ To simulate going offline on Windows, open the **Device Manager** and select **N
 
 ![](./../images/DeviceManager.jpg)
 
-On the Windows app, navigate back to the Mokey page and you will see the **OfflineAlert.razor** component displayed. 
+On the Windows app, navigate back to the Monkey page and you will see the **OfflineAlert.razor** component displayed. 
 
 ![](./../images/OfflineAlert.jpg)
 
-In the **Device Manager**, right-click and **Enable device** on the Enternet Adapter. On the Windows app, click the **Refresh** button and the page will reload. 
+In the **Device Manager**, right-click and **Enable device** on the Ethernet Adapter. On the Windows app, click the **Refresh** button and the page will reload. 
 
 ### Check-in
 

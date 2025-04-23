@@ -1,7 +1,7 @@
 ## 3. Building UI and Adding Navigation
 
 ### Goal
-Build a UI that displays a list of monkeys and add that page to the app's navigation menu. When a monkey is selected in the list, display the mokey details. 
+Build a UI that displays a list of monkeys and add that page to the app's navigation menu. When a monkey is selected in the list, display the monkey details. 
 
 ### Steps
 1. [] **Create the Monkeys Page**
@@ -65,7 +65,7 @@ To make the **Monkeys** page accessible, add a navigation link to the **Layout\N
 
 3. [] **Run the Solution**
 
-Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the **Monkeys** page by selecing the link in the menu. Make sure both the Windows app and the Web app work as expected. 
+Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the **Monkeys** page by selecting the link in the menu. Make sure both the Windows app and the Web app work as expected. 
 
 ![](./../images/MonkeyPage.jpg)
 
