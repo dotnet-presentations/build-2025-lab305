@@ -3,6 +3,10 @@
 
 In this lab, you'll build a hybrid mobile, desktop and web application using the [.NET MAUI Blazor Hybrid and Web](https://learn.microsoft.com/aspnet/core/blazor/hybrid/tutorials/maui-blazor-web-app?view=aspnetcore-9.0#net-maui-blazor-hybrid-and-web-app-solution-template) template. This template combines a Blazor Web app and a .NET MAUI app, sharing UI components through a Razor Class Library (RCL) that can be deployed to Android, iOS, macOS, Windows and the web. By the end of this 75-minute workshop, you'll have a functional app that displays data, navigates between pages, and uses platform-specific features.
 
+## Setup
+
+If you are following this lab on your own and not in the lab VM environment, you will need to set up your machine for .NET MAUI development. Follow the [installation instructions](https://learn.microsoft.com/en-us/dotnet/maui/get-started/installation?view=net-maui-9.0&tabs=visual-studio) to set up your machine. 
+
 ## Agenda
 
 Follow these sections in sequence to build the solution for this lab. 
