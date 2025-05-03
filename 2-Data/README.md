@@ -24,7 +24,7 @@ public class Monkey
 
 2. [] **Create the MonkeyService Interface**
 
-In this step, you will create a new interface called `IMonkeyService` in the **MyHybridApp.Shared** project. The interface will include methods for retrieving all monkeys and fetching a specific monkey by its name. In the **Services** folder, add a new class **IMonkeyService.cs** with the following code:
+In this step, you will create a new interface called `IMonkeyService` in the **MyHybridApp.Shared** project. The interface will include methods for retrieving all monkeys and fetching a specific monkey by its name. In the **Services** folder, add a new interface **IMonkeyService.cs** with the following code:
 ```csharp
 using MyHybridApp.Shared.Models;
 
@@ -61,7 +61,7 @@ public class MonkeyService : IMonkeyService
         return _monkeys?.FirstOrDefault(m => m.Name == name);
     }
 
-    private List<Monkey> _monkeys =
+    private readonly List<Monkey> _monkeys =
     [
         new Monkey { Name = "Baboon", Location = "Africa & Asia", Details = "Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae.", Image = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg", Population = 10000, Latitude = -8.783195, Longitude =  34.508523 },
         new Monkey { Name = "Capuchin Monkey", Location = "Central & South America", Details = "The capuchin monkeys are New World monkeys of the subfamily Cebinae. Prior to 2011, the subfamily contained only a single genus, Cebus.", Image = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg", Population = 23000, Latitude = 12.769013, Longitude = -85.602364 },
