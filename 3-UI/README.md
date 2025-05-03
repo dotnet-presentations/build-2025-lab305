@@ -71,9 +71,9 @@ Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigat
 
 ![](./../images/MonkeyPage.jpg)
 
-4. [] **Create the Details Page**
+4. [] **Create the Monkey Details Page**
 
-Add a new Razor component **Pages\DetailsPage.razor** in the **MyHybridApp.Shared** project. This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
+Add a new Razor component **Pages\MonkeyDetails.razor** in the **MyHybridApp.Shared** project. This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
 
 ```razor
 @using MyHybridApp.Shared.Services
