@@ -161,7 +161,7 @@ builder.Services.AddScoped<IMonkeyService, MonkeyService>();
 
 >**Important Note:** Typically you would not hard code the Url of an endpoint in the client, but use a configuration file saved to the devices' storage. In .NET MAUI you can use [**Microsoft.Maui.Storage.Preferences**](https://learn.microsoft.com/dotnet/maui/platform-integration/storage/preferences) and/or [**Microsoft.Maui.Storage.SecureStorage**](https://learn.microsoft.com/dotnet/maui/platform-integration/storage/secure-storage).
 
->**Note on Android Emulators & iOS Simulators**: This lab can only run Windows and Web apps, however, if you wanted to debug to emulators and simulators you can use the [**HttpClientHelper**](https://github.com/dotnet-presentations/build-2025-lab305/blob/f7075ad8cca2306ae1f90a3439ca83a29c022e0e/Finish/MyHybridApp/MyHybridApp/Services/HttpClientHelper.cs#L6) defined in the [**Finish**](../Finish/) folder which configures the http requests so they work correctly. 
+>**Note on Android Emulators & iOS Simulators**: This lab can only run Windows and Web apps, however, if you wanted to debug to emulators and simulators you can use the [**HttpClientHelper**](https://github.com/dotnet-presentations/build-2025-lab305/blob/main/Finish/MyHybridApp/MyHybridApp/Services/HttpClientHelper.cs) defined in the [**Finish**](https://github.com/dotnet-presentations/build-2025-lab305/tree/main/Finish/) folder which configures the http requests so they work correctly. 
 
 ### Check-in
 
