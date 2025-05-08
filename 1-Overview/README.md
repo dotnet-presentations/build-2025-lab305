@@ -26,7 +26,11 @@ Launch **Visual Studio** and select **Create a new project** from the start scre
 
 2. [] **Choose the Template**
 
-Select the **.NET MAUI Blazor Hybrid and Web App** template. This template is specifically designed to create a solution with multiple projects: a shared Razor Class Library (RCL), a Blazor Web App, and a .NET MAUI Blazor Hybrid App. These projects allow you to share UI components and logic across platforms.
+Select the `.NET MAUI Blazor Hybrid and Web App` template. 
+
+> This template is specifically designed to create a solution with multiple projects: a shared Razor Class Library (RCL), a Blazor Web App, and a .NET MAUI Blazor Hybrid App. These projects allow you to share UI components and logic across platforms.
+
+![New Project](../images/NewProjectTemplate.png)
 
 3. [] **Name the Project**
 
@@ -48,18 +52,26 @@ This will generate a solution with the following structure:
 - **MyHybridApp.Shared**: Contains shared Razor components and services.
 - **MyHybridApp.Web**: A Blazor Web App project.
 
+> NOTE: if a Sign in to Visual Studio dialog appears, click **Close**.
 
 ### Run the app
 
-1. [] Make sure the project has restored all the NuGet packages. From the Build menu, select **Build Solution** `Ctrl+Shift+B` to build all of the projects for all of the platforms. 
+1. [] Make sure the project has restored all the NuGet packages. From the Build menu, select **Build Solution** with `Ctrl+Shift+B` to build all of the projects for all of the platforms. Or right click on the Solution and select build. 
 
-2. [] To make it easier to run the entire solution when debugging, drop down the Debug target menu and select **Configure Startup Projects...**
+2. [] To make it easier to run the entire solution when debugging, drop down the Debug target menu and select **Configure Startup Projects...** or press `Alt+Enter` or right click on the solution and select **Properties**.
 
 ![](../images/Configure.jpg)
 
-3. [] Select **Multiple Startup Projects** and configure the launch profile to **Start** the **MyHybridApp** with the **Debug Target** set to _Windows Machine_ and set the **MyHybridApp.Web** to **Start without debugging** with the **Debug Target** set to _https_. 
+3. [] Select **Multiple Startup Projects** and configure the launch profile:
+    - **MyHybridApp**: **Action** set to _Start_ & **Debug Target** set to _Windows Machine_
+    - **MyHybridApp.Shared**: **Action** set to _None_
+    - **MyHybridApp.Web**: **Action** set to _Start without debugging_ & **Debug Target** set to _https_. 
 
-4. [] Name the Launch profile **Windows+Web** then Click **OK**.
+4. [] Name the Launch profile **Windows+Web** by clicking the rename box under Launch profile, then Click **OK**.
+
+![Rename profile](../images/RenameProfile.png)
+
+Here is what the final profile should look like:
 
 ![](../images/Startup.jpg)
 

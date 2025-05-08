@@ -6,7 +6,7 @@ Build a UI that displays a list of monkeys and add that page to the app's naviga
 ### Steps
 1. [] **Create the Monkeys Page**
 
- In the **MyHybridApp.Shared** project, right-click on the **Pages** folder and **Add** -> **Razor Component**. Name it **Monkeys.razor**. This page will fetch and display a list of monkeys using the **IMonkeyService**. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout. 
+ In the **MyHybridApp.Shared** project, right-click on the **Pages** folder and **Add** -> **Razor Component**. Name it `Monkeys.razor`. This page will fetch and display a list of monkeys using the **IMonkeyService**. It will include a loading spinner while the data is being fetched and display each monkey's name and image in a card layout. 
  
  Add this code to the page:
 
@@ -67,13 +67,15 @@ To make the **Monkeys** page accessible, open the **Layout\NavMenu.razor** file 
 
 3. [] **Run the Solution**
 
-Make sure the monkey data is loading. Build and Debug `F5` the solution. Navigate to the **Monkeys** page by selecting the link in the menu. Make sure both the Windows app and the Web app work as expected. 
+ Build and Debug `F5` the solution. Navigate to the **Monkeys** page by selecting the link in the menu. Make sure both the Windows app and the Web app work as expected and monkeys are visible. 
 
 ![](./../images/MonkeyPage.jpg)
 
 4. [] **Create the Monkey Details Page**
 
-Add a new Razor component **Pages\MonkeyDetails.razor** in the **MyHybridApp.Shared** project. This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
+Add a new Razor component **Pages\MonkeyDetails.razor** in the **MyHybridApp.Shared** project.  Right-click on the **Pages** folder and **Add** -> **Razor Component**. Name it `MonkeyDetails.razor`.  
+
+This page will display detailed information about a selected monkey. The route for this page will include a **name** parameter to identify the selected monkey.
 
 ```razor
 @using MyHybridApp.Shared.Services

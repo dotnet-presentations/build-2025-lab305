@@ -4,9 +4,7 @@
 Detect internet access and display a dialog if offline. Implement a custom **IConnectivityService** for both .NET MAUI and Blazor Web app. Create a shared Razor component that uses this service to display a message to the user and add it to the **Monkeys.razor** page.
 
 ### Steps
-1. [] **Create the Connectivity Service**
-
-Add the `IConnectivityService` and its implementations in both **MyHybridApp** and **MyHybridApp.Web**.
+1. [] **Create the Connectivity Service Interface**
 
 Create the shared interface in the **MyHybridApp.Shared** project **\Services\IConnectivityService.cs**:
 ```csharp
@@ -17,6 +15,8 @@ public interface IConnectivityService
     bool IsConnected();
 }
 ```
+
+2. [] **Create the Connectivity Service for .NET MAUI**
 
 Create the .NET MAUI implementation in the **MyHybridApp** project **\Services\ConnectivityService.cs**:
 
@@ -33,6 +33,9 @@ public class ConnectivityService : IConnectivityService
     }
 }
 ```
+
+3. [] **Create the Connectivity Service for Web**
+
 Create the Blazor web implementation in **MyHybridApp.Web** project **\Services\ConnectivityService.cs**:
 ```csharp
 using MyHybridApp.Shared.Services;
@@ -48,7 +51,7 @@ public class ConnectivityService : IConnectivityService
 }
 ```
 
-2. [] **Register Services**:  
+4. [] **Register Services**:  
 
 Register `IConnectivityService` in both **MyHybridApp.Web** project's **Program.cs** and **MyHybridApp** project's **MauiProgram.cs**.
 
@@ -56,7 +59,7 @@ Register `IConnectivityService` in both **MyHybridApp.Web** project's **Program.
 builder.Services.AddSingleton<IConnectivityService, ConnectivityService>();
 ```
 
-3. [] **Create the Shared Razor Component**
+5. [] **Create the Shared Razor Component**
 
 Next add a folder to the Razor Class Library **MyHybridApp.Shared** called **Components** and add a new Razor component called **OfflineAlert.razor**. Add the following code:
 
@@ -78,6 +81,8 @@ Next add a folder to the Razor Class Library **MyHybridApp.Shared** called **Com
     }
 }
 ```
+
+6. [] **Use Shared Razor Component**
 
 Now modify the **Pages\Monkeys.razor** to use this component. First, inject the `NavigationManager`. We will use this to reload the page after the user clicks **Refresh** on the component. At the top of this file, under the `@inject IMonkeyService MonkeyService` line, add:
 
@@ -106,7 +111,7 @@ async Task RefreshHandler()
 }
 ```
 
-4. [] **Run the Solution and Disable the Cache**
+7. [] **Run the Solution and Disable the Cache**
 
 Build and Debug `F5` the solution. On the **Windows** app, select the **Monkeys** page and notice the Offline component is not displayed. Hit `F12` to start the WebView developer tools. 
 
@@ -116,11 +121,11 @@ Open the Network tab and select **Disable cache** so that the pictures of the mo
 
 >**Tip:** If the WebView has focus and you are running in `DEBUG` mode, you can use the `F12` Web Developer tools to debug the rendered web app (HTML, CSS, JavaScript) inside the WebView. For more information, see [the documentation](https://learn.microsoft.com/aspnet/core/blazor/hybrid/developer-tools?view=aspnetcore-9.0&viewFallbackFrom=net-maui-9.0&pivots=android&toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json).
 
-5. [] **Go offline and Test the ConnectivityService**
+8. [] **Go offline and Test the ConnectivityService**
 
-To simulate going offline on Windows, open the **Device Manager** and select **Network Adapters**. Right-click and **Disable device** the Ethernet Adapter. 
+To simulate going offline on Windows, open the **Device Manager** in Windows from the start menu, and select and drop down **Network Adapters**. Right-click on **Microsoft Hyper-V Network Adapter** and **Disable device** for this adapter. 
 
-![](./../images/DeviceManager.jpg)
+![](./../images/DeviceManager.png)
 
 On the Windows app, navigate back to the Monkey page and you will see the **OfflineAlert.razor** component displayed. 
 
