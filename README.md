@@ -1,4 +1,9 @@
+<p align="center">
+<img src="img/banner.jpg" alt="decorative banner" width="1200"/>
+</p>
+
 # Build 2025 Lab 305
+
 ## Build Multi-platform Hybrid Apps with Blazor & .NET MAUI
 
 In this lab, you'll build a hybrid mobile, desktop and web application using the [.NET MAUI Blazor Hybrid and Web](https://learn.microsoft.com/aspnet/core/blazor/hybrid/tutorials/maui-blazor-web-app?view=aspnetcore-9.0#net-maui-blazor-hybrid-and-web-app-solution-template) template. This template combines a Blazor Web app and a .NET MAUI app, sharing UI components through a Razor Class Library (RCL) that can be deployed to Android, iOS, macOS, Windows and the web. By the end of this 75-minute workshop, you'll have a functional app that displays data, navigates between pages, and uses platform-specific features.
@@ -27,3 +32,10 @@ At the end of this lab, you will build an app that looks like this across Androi
 - [Tutorial: Build a .NET MAUI Blazor Hybrid app with a Blazor Web App](https://learn.microsoft.com/aspnet/core/blazor/hybrid/tutorials/maui-blazor-web-app?view=aspnetcore-9.0&viewFallbackFrom=net-maui-9.0&toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json)
 - [Tutorial: Build a .NET MAUI Blazor Hybrid and Web App with ASP.NET Core Identity](https://learn.microsoft.com/aspnet/core/blazor/hybrid/security/maui-blazor-web-identity?toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json&view=aspnetcore-9.0)
 - [Learn: Publish Blazor Hybrid apps](https://learn.microsoft.com/aspnet/core/blazor/hybrid/publish/?toc=%2Fdotnet%2Fmaui%2Ftoc.json&bc=%2Fdotnet%2Fmaui%2Fbreadcrumb%2Ftoc.json&view=aspnetcore-9.0)
+
+## Session Resources 
+
+| Resources          | Links                             | Description        |
+|:-------------------|:----------------------------------|:-------------------|
+| Build session page | https://build.microsoft.com/sessions/LAB305 | Event session page with downloadable recording, slides, resources, and speaker bio |
+|Microsoft Learn|https://aka.ms/build25/plan/ADAI_DevsAdvPlan|Official Collection or Plan with skilling resources to learn at your own pace|
