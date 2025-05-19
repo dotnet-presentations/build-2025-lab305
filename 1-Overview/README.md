@@ -125,7 +125,7 @@ public class FormFactor : IFormFactor
         return DeviceInfo.Platform.ToString() + " - " + DeviceInfo.VersionString;
     }
 }
-```    
+```
 
 2. [] **MyHybridApp.Shared Razor Class Library**
 - Expand the **MyHybridApp.Shared** project structure in Solution Explorer. Notice the **Pages** and **Layout** that are shared by the .NET MAUI and Blazor Web apps. 
