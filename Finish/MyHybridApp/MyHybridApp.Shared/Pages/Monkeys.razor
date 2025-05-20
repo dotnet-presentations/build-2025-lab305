@@ -1,13 +1,9 @@
 ﻿@using MyHybridApp.Shared.Services
 @using MyHybridApp.Shared.Models
-@using MyHybridApp.Shared.Components
 @page "/monkeys"
 @inject IMonkeyService MonkeyService
-@inject NavigationManager NavigationManager
 
 <h1>Monkey Finder</h1>
-
-<OfflineAlert RefreshCallback="RefreshHandler" />
 
 @if (monkeys == null)
 {
@@ -23,7 +19,7 @@ else
         @foreach (var monkey in monkeys)
         {
             <div class="col-md-4">
-                <div class="card">
+                <div class="card monkey">
                     <img src="@monkey.Image" class="card-img-top" alt="@monkey.Name" />
                     <div class="card-body">
                         <h5 class="card-title">@monkey.Name</h5>
@@ -41,11 +37,5 @@ else
     protected override async Task OnInitializedAsync()
     {
         monkeys = await MonkeyService.GetMonkeysAsync();
-    }
-
-    async Task RefreshHandler()
-    {
-        monkeys = await MonkeyService.GetMonkeysAsync(); //try to get the monkeys again
-        NavigationManager.NavigateTo("/monkeys", true); //reload the page
     }
 }
