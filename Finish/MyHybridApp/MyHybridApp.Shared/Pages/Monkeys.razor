@@ -2,8 +2,11 @@
 @using MyHybridApp.Shared.Models
 @page "/monkeys"
 @inject IMonkeyService MonkeyService
+@inject NavigationManager NavigationManager
 
 <h1>Monkey Finder</h1>
+
+<OfflineAlert RefreshCallback="RefreshHandler" />
 
 @if (monkeys == null)
 {
@@ -37,5 +40,11 @@ else
     protected override async Task OnInitializedAsync()
     {
         monkeys = await MonkeyService.GetMonkeysAsync();
+    }
+
+    async Task RefreshHandler()
+    {
+        monkeys = await MonkeyService.GetMonkeysAsync(); //try to get the monkeys again
+        NavigationManager.NavigateTo("/monkeys", true); //reload the page
     }
 }
